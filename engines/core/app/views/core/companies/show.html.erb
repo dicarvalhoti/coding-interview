@@ -1,0 +1,50 @@
+<% flash.each do |type, message| %>
+<%=show_alert(type, message)%>
+<% end %>
+<h1 class="mb-10 text-4xl font-extrabold text-gray-900 dark:text-white">Company Details</h1>
+<div class="overflow-hidden bg-white shadow sm:rounded-lg mb-5">
+  <div class="px-4 py-5 sm:px-6">
+    <h3 class="text-lg font-medium leading-6 text-gray-900">Company Information</h3>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500">Details about the company.</p>
+  </div>
+  <div class="border-t border-gray-200">
+    <dl>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Name</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><%= @company.name %></dd>
+      </div>
+    </dl>
+  </div>
+  <div class="border-t border-gray-200 px-4 py-5">
+    <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+        List Of Users
+    </caption>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-200 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Display Name</th>
+                <th class="px-4 py-2">Email</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <% @company.users.each do |user| %>
+                <tr>
+                    <td class="p-2"><%= user.display_name %></td>
+                    <td class="p-2"><%= user.email %></td>
+                </tr>
+            <% end %>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+<%=link_to home_app_path, class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" do%>
+    <svg class="w-6 h-6 text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+      </svg>
+    Back
+<%end%>
+  

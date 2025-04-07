@@ -1,0 +1,30 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/core/application.css --minify",
+    "build:watch": "node build.js --watch",
+    "build:css:watch": "tailwindcss -i ./app/assets/stylesheets/application.css -o ./app/assets/stylesheets/core/application.css --watch"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.12",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.17",
+    "esbuild": "^0.19.0",
+    "glob": "^11.0.1",
+    "motion": "^12.0.5",
+    "postcss": "^8.4.33",
+    "postcss-import": "^16.0.0",
+    "sweetalert2": "^11.17.2",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "flowbite": "^2.1.1"
+  }
+}

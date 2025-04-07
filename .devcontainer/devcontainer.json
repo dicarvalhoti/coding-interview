@@ -1,0 +1,21 @@
+{
+  "name": "Rails DevContainer",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+  "forwardPorts": [3000],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "rebornix.ruby",
+    "castwide.solargraph",
+    "ms-vscode-remote.remote-containers"
+  ],
+  "postCreateCommand": "bundle install",
+  "build": {
+    "context": "..",
+    "dockerfile": "./Dockerfile"
+  }
+}
